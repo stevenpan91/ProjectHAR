@@ -1,0 +1,9 @@
+gcc -m32 -T link.ld -o myos.bin -ffreestanding -O2 -nostdlib boot.o kernel.o
+-lgcc
+
+nasm -f bin -o myfirst.bin myfirst.asm
+dd status=noxfer conv=notrunc if=myfirst.bin of=myfirst.flp
+
+nasm -f elf32 kernel.asm -o kasm.o
+gcc -m32 -c kernel.c -o kc.o
+ld -m elf_i386 -T link.ld -o kernel kasm.co kc.o

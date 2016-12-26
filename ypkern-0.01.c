@@ -3,7 +3,7 @@
 
 void kmain(void)
 {
-	consts char *str="YP test kernel";
+	const char *str="YP test kernel";
 	char *vidptr = (char*)0xb8000; //video memory
 
 	unsigned int i=0;
