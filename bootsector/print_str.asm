@@ -62,7 +62,7 @@ ploopstart:
 	mov al,bl	;print digit	;al is 31h
 	int 0x10	;		;print 31h
 	sub bx,0x30	;		;bx is 1
-	sub dx,0x30	;		;dx is 1
+	;sub dx,0x30	;		;dx is 1
 	jmp postloopcmp
 
 postloopcmp:	
@@ -88,7 +88,7 @@ greater_than_9:
 	mov al,bl	;al is f
 	int 0x10	;print	should print f
 	sub bx,0x57
-	sub dx,0x57
+	;sub dx,0x57
 	jmp postloopcmp
 
 print_newln:
@@ -113,5 +113,5 @@ print_newln:
 	ret
 	;jmp finish
 
-HEX_OUT: db '0x0000',0
-newline: db 0x0a,0
+;HEX_OUT: db '0x0000',0
+;newline: db 0x0a,0

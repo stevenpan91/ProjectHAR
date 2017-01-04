@@ -1,0 +1,56 @@
+00000000  55                push ebp
+00000001  48                dec eax
+00000002  89E5              mov ebp,esp
+00000004  BFDEDE0000        mov edi,0xdede
+00000009  B800000000        mov eax,0x0
+0000000E  E802000000        call dword 0x15
+00000013  5D                pop ebp
+00000014  C3                ret
+00000015  55                push ebp
+00000016  48                dec eax
+00000017  89E5              mov ebp,esp
+00000019  897DFC            mov [ebp-0x4],edi
+0000001C  8B45FC            mov eax,[ebp-0x4]
+0000001F  5D                pop ebp
+00000020  C3                ret
+00000021  0000              add [eax],al
+00000023  0000              add [eax],al
+00000025  0000              add [eax],al
+00000027  001400            add [eax+eax],dl
+0000002A  0000              add [eax],al
+0000002C  0000              add [eax],al
+0000002E  0000              add [eax],al
+00000030  017A52            add [edx+0x52],edi
+00000033  0001              add [ecx],al
+00000035  7810              js 0x47
+00000037  011B              add [ebx],ebx
+00000039  0C07              or al,0x7
+0000003B  08900100001C      or [eax+0x1c000001],dl
+00000041  0000              add [eax],al
+00000043  001C00            add [eax+eax],bl
+00000046  0000              add [eax],al
+00000048  B8FFFFFF15        mov eax,0x15ffffff
+0000004D  0000              add [eax],al
+0000004F  0000              add [eax],al
+00000051  41                inc ecx
+00000052  0E                push cs
+00000053  108602430D06      adc [esi+0x60d4302],al
+00000059  50                push eax
+0000005A  0C07              or al,0x7
+0000005C  0800              or [eax],al
+0000005E  0000              add [eax],al
+00000060  1C00              sbb al,0x0
+00000062  0000              add [eax],al
+00000064  3C00              cmp al,0x0
+00000066  0000              add [eax],al
+00000068  AD                lodsd
+00000069  FF                db 0xff
+0000006A  FF                db 0xff
+0000006B  FF0C00            dec dword [eax+eax]
+0000006E  0000              add [eax],al
+00000070  00410E            add [ecx+0xe],al
+00000073  108602430D06      adc [esi+0x60d4302],al
+00000079  47                inc edi
+0000007A  0C07              or al,0x7
+0000007C  0800              or [eax],al
+0000007E  0000              add [eax],al
