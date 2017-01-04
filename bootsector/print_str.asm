@@ -1,15 +1,3 @@
-print_string:
-	pusha
-	mov ah, 0x0e
-	jmp iter
-	
-iter:
-	lodsb
-	cmp al,0
-	je finish	;return func if null
-	int 0x10	;otherwise print it
-	jmp iter
-
 finish:
 	popa
 	ret
@@ -29,14 +17,13 @@ iter2:
 
 print_hex:
 	pusha
-	mov ah,0x0e
-	;mov bx, HEX_OUT
+	mov ah,0x0e ;write to screen
 	
-	mov bx, '0'
+	mov bx, '0' ;write 0
 	mov al,bl
 	int 0x10
 	
-	mov bx, 'x'
+	mov bx, 'x' ;write x
 	mov al,bl
 	int 0x10
 
@@ -62,11 +49,9 @@ ploopstart:
 	mov al,bl	;print digit	;al is 31h
 	int 0x10	;		;print 31h
 	sub bx,0x30	;		;bx is 1
-	;sub dx,0x30	;		;dx is 1
 	jmp postloopcmp
 
 postloopcmp:	
-	;mov cx,di	;		
 	shl bx,cl	;shift bx left to subtract it	;bx is 1000
 	mov dx,si		;restore dx to original 1fb6
 	sub dx,bx	;eliminate leftmost digit	;1fb6-1000=0fb6
@@ -79,7 +64,6 @@ postloopcmp:
 	jmp loopend
 
 loopend:
-	;does cx need to be pushed again?
 	jmp finish	;pop and exit
 
 greater_than_9:
@@ -88,30 +72,15 @@ greater_than_9:
 	mov al,bl	;al is f
 	int 0x10	;print	should print f
 	sub bx,0x57
-	;sub dx,0x57
 	jmp postloopcmp
 
 print_newln:
-	;pusha
-	;mov ah,0x0e
 	push ax
-	;push bx
-	mov ah,2
-	mov bh,0
-	;mov bh,0
-	mov dl,0
-	;mov bx,0x0a
-	;mov al,bl
-	inc dh
-	int 0x10
-	;pop bx
-	pop ax
-	;mov bx,0x0a
-	;mov al,bl
-	;int 0x10
-	;popa
+	mov ah,2 ;cursor control
+	mov bh,0 ;page 0
+	mov dl,0 ;column 0
+	inc dh   ;increase row number
+	int 0x10 ;bios interrupt
+	pop ax   ;restore ax
 	ret
-	;jmp finish
 
-;HEX_OUT: db '0x0000',0
-;newline: db 0x0a,0
