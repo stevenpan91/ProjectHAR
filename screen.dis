@@ -1,0 +1,1574 @@
+00000000  23696E            and ebp,[ecx+0x6e]
+00000003  636C7564          arpl [ebp+esi*2+0x64],bp
+00000007  652022            and [gs:edx],ah
+0000000A  7363              jnc 0x6f
+0000000C  7265              jc 0x73
+0000000E  656E              gs outsb
+00000010  2E68220A0A75      cs push dword 0x750a0a22
+00000016  6E                outsb
+00000017  7369              jnc 0x82
+00000019  676E              a16 outsb
+0000001B  656420696E        and [fs:ecx+0x6e],ch
+00000020  7420              jz 0x42
+00000022  6765745F          gs jz 0x85
+00000026  7363              jnc 0x8b
+00000028  7265              jc 0x8f
+0000002A  656E              gs outsb
+0000002C  5F                pop edi
+0000002D  6F                outsd
+0000002E  66667365          o16 jnc 0x97
+00000032  7428              jz 0x5c
+00000034  696E7420636F6C    imul ebp,[esi+0x74],dword 0x6c6f6320
+0000003B  2C20              sub al,0x20
+0000003D  696E7420726F77    imul ebp,[esi+0x74],dword 0x776f7220
+00000044  297B0A            sub [ebx+0xa],edi
+00000047  0A09              or cl,[ecx]
+00000049  2F                das
+0000004A  2F                das
+0000004B  7368              jnc 0xb5
+0000004D  6F                outsd
+0000004E  756C              jnz 0xbc
+00000050  6420696E          and [fs:ecx+0x6e],ch
+00000054  7665              jna 0xbb
+00000056  7374              jnc 0xcc
+00000058  69676174652062    imul esp,[edi+0x61],dword 0x62206574
+0000005F  7574              jnz 0xd5
+00000061  206974            and [ecx+0x74],ch
+00000064  207365            and [ebx+0x65],dh
+00000067  656D              gs insd
+00000069  7320              jnc 0x8b
+0000006B  61                popad
+0000006C  7320              jnc 0x8e
+0000006E  7468              jz 0xd8
+00000070  6F                outsd
+00000071  7567              jnz 0xda
+00000073  6820697427        push dword 0x27746920
+00000078  7320              jnc 0x9a
+0000007A  6F                outsd
+0000007B  6666206279        o16 and [edx+0x79],ah
+00000080  2031              and [ecx],dh
+00000082  0A09              or cl,[ecx]
+00000084  756E              jnz 0xf4
+00000086  7369              jnc 0xf1
+00000088  676E              a16 outsb
+0000008A  656420696E        and [fs:ecx+0x6e],ch
+0000008F  7420              jz 0xb1
+00000091  7265              jc 0xf8
+00000093  7475              jz 0x10a
+00000095  726E              jc 0x105
+00000097  7661              jna 0xfa
+00000099  6C                insb
+0000009A  3B0A              cmp ecx,[edx]
+0000009C  092F              or [edi],ebp
+0000009E  2F                das
+0000009F  61                popad
+000000A0  64646564206F6E    and [fs:edi+0x6e],ch
+000000A7  650A09            or cl,[gs:ecx]
+000000AA  7265              jc 0x111
+000000AC  7475              jz 0x123
+000000AE  726E              jc 0x11e
+000000B0  7661              jna 0x113
+000000B2  6C                insb
+000000B3  3D28726F77        cmp eax,0x776f7228
+000000B8  2A4D41            sub cl,[ebp+0x41]
+000000BB  58                pop eax
+000000BC  5F                pop edi
+000000BD  43                inc ebx
+000000BE  4F                dec edi
+000000BF  4C                dec esp
+000000C0  53                push ebx
+000000C1  2B636F            sub esp,[ebx+0x6f]
+000000C4  6C                insb
+000000C5  292A              sub [edx],ebp
+000000C7  322B              xor ch,[ebx]
+000000C9  313B              xor [ebx],edi
+000000CB  0A0A              or cl,[edx]
+000000CD  7D0A              jnl 0xd9
+000000CF  0A696E            or ch,[ecx+0x6e]
+000000D2  7420              jz 0xf4
+000000D4  6765745F          gs jz 0x137
+000000D8  637572            arpl [ebp+0x72],si
+000000DB  736F              jnc 0x14c
+000000DD  7228              jc 0x107
+000000DF  297B0A            sub [ebx+0xa],edi
+000000E2  092F              or [edi],ebp
+000000E4  2F                das
+000000E5  64657669          gs jna 0x152
+000000E9  636520            arpl [ebp+0x20],sp
+000000EC  7573              jnz 0x161
+000000EE  657320            gs jnc 0x111
+000000F1  636F6E            arpl [edi+0x6e],bp
+000000F4  7472              jz 0x168
+000000F6  6F                outsd
+000000F7  6C                insb
+000000F8  207265            and [edx+0x65],dh
+000000FB  67206173          and [bx+di+0x73],ah
+000000FF  20616E            and [ecx+0x6e],ah
+00000102  20696E            and [ecx+0x6e],ch
+00000105  64657820          gs js 0x129
+00000109  746F              jz 0x17a
+0000010B  207365            and [ebx+0x65],dh
+0000010E  6C                insb
+0000010F  6563740A09        arpl [gs:edx+ecx+0x9],si
+00000114  2F                das
+00000115  2F                das
+00000116  696E7465726E61    imul ebp,[esi+0x74],dword 0x616e7265
+0000011D  6C                insb
+0000011E  207265            and [edx+0x65],dh
+00000121  676973746572730A  imul esi,[bp+di+0x74],dword 0xa737265
+00000129  092F              or [edi],ebp
+0000012B  2F                das
+0000012C  7265              jc 0x193
+0000012E  672031            and [bx+di],dh
+00000131  343A              xor al,0x3a
+00000133  206869            and [eax+0x69],ch
+00000136  676820627974      push dword 0x74796220
+0000013C  65206F66          and [gs:edi+0x66],ch
+00000140  206375            and [ebx+0x75],ah
+00000143  7273              jc 0x1b8
+00000145  6F                outsd
+00000146  7220              jc 0x168
+00000148  6F                outsd
+00000149  66667365          o16 jnc 0x1b2
+0000014D  740A              jz 0x159
+0000014F  092F              or [edi],ebp
+00000151  2F                das
+00000152  7265              jc 0x1b9
+00000154  672031            and [bx+di],dh
+00000157  353A206C6F        xor eax,0x6f6c203a
+0000015C  7720              ja 0x17e
+0000015E  627974            bound edi,[ecx+0x74]
+00000161  65206F66          and [gs:edi+0x66],ch
+00000165  206375            and [ebx+0x75],ah
+00000168  7273              jc 0x1dd
+0000016A  6F                outsd
+0000016B  7220              jc 0x18d
+0000016D  6F                outsd
+0000016E  66667365          o16 jnc 0x1d7
+00000172  740A              jz 0x17e
+00000174  092F              or [edi],ebp
+00000176  2F                das
+00000177  6F                outsd
+00000178  6E                outsb
+00000179  636520            arpl [ebp+0x20],sp
+0000017C  696E7465726E61    imul ebp,[esi+0x74],dword 0x616e7265
+00000183  6C                insb
+00000184  207265            and [edx+0x65],dh
+00000187  6769737465722068  imul esi,[bp+di+0x74],dword 0x68207265
+0000018F  61                popad
+00000190  7320              jnc 0x1b2
+00000192  626565            bound esp,[ebp+0x65]
+00000195  6E                outsb
+00000196  207365            and [ebx+0x65],dh
+00000199  6C                insb
+0000019A  6563746564        arpl [gs:ebp+0x64],si
+0000019F  2C20              sub al,0x20
+000001A1  7765              ja 0x208
+000001A3  206D61            and [ebp+0x61],ch
+000001A6  7920              jns 0x1c8
+000001A8  7265              jc 0x20f
+000001AA  61                popad
+000001AB  640A09            or cl,[fs:ecx]
+000001AE  2F                das
+000001AF  2F                das
+000001B0  6F                outsd
+000001B1  7220              jc 0x1d3
+000001B3  7772              ja 0x227
+000001B5  6974652061206279  imul esi,[ebp+0x20],dword 0x79622061
+000001BD  7465              jz 0x224
+000001BF  206F6E            and [edi+0x6e],ch
+000001C2  20746865          and [eax+ebp*2+0x65],dh
+000001C6  20646174          and [ecx+0x74],ah
+000001CA  61                popad
+000001CB  207265            and [edx+0x65],dh
+000001CE  6769737465720A09  imul esi,[bp+di+0x74],dword 0x90a7265
+000001D6  0A09              or cl,[ecx]
+000001D8  706F              jo 0x249
+000001DA  7274              jc 0x250
+000001DC  5F                pop edi
+000001DD  627974            bound edi,[ecx+0x74]
+000001E0  655F              gs pop edi
+000001E2  6F                outsd
+000001E3  7574              jnz 0x259
+000001E5  285245            sub [edx+0x45],dl
+000001E8  47                inc edi
+000001E9  5F                pop edi
+000001EA  53                push ebx
+000001EB  43                inc ebx
+000001EC  52                push edx
+000001ED  45                inc ebp
+000001EE  45                inc ebp
+000001EF  4E                dec esi
+000001F0  5F                pop edi
+000001F1  43                inc ebx
+000001F2  54                push esp
+000001F3  52                push edx
+000001F4  4C                dec esp
+000001F5  2C31              sub al,0x31
+000001F7  3429              xor al,0x29
+000001F9  3B0A              cmp ecx,[edx]
+000001FB  09696E            or [ecx+0x6e],ebp
+000001FE  7420              jz 0x220
+00000200  6F                outsd
+00000201  66667365          o16 jnc 0x26a
+00000205  7420              jz 0x227
+00000207  3D20706F72        cmp eax,0x726f7020
+0000020C  745F              jz 0x26d
+0000020E  627974            bound edi,[ecx+0x74]
+00000211  655F              gs pop edi
+00000213  696E285245475F    imul ebp,[esi+0x28],dword 0x5f474552
+0000021A  53                push ebx
+0000021B  43                inc ebx
+0000021C  52                push edx
+0000021D  45                inc ebp
+0000021E  45                inc ebp
+0000021F  4E                dec esi
+00000220  5F                pop edi
+00000221  44                inc esp
+00000222  41                inc ecx
+00000223  54                push esp
+00000224  41                inc ecx
+00000225  2920              sub [eax],esp
+00000227  3C3C              cmp al,0x3c
+00000229  2038              and [eax],bh
+0000022B  3B0A              cmp ecx,[edx]
+0000022D  09706F            or [eax+0x6f],esi
+00000230  7274              jc 0x2a6
+00000232  5F                pop edi
+00000233  627974            bound edi,[ecx+0x74]
+00000236  655F              gs pop edi
+00000238  6F                outsd
+00000239  7574              jnz 0x2af
+0000023B  285245            sub [edx+0x45],dl
+0000023E  47                inc edi
+0000023F  5F                pop edi
+00000240  53                push ebx
+00000241  43                inc ebx
+00000242  52                push edx
+00000243  45                inc ebp
+00000244  45                inc ebp
+00000245  4E                dec esi
+00000246  5F                pop edi
+00000247  43                inc ebx
+00000248  54                push esp
+00000249  52                push edx
+0000024A  4C                dec esp
+0000024B  2C31              sub al,0x31
+0000024D  35293B0A09        xor eax,0x90a3b29
+00000252  6F                outsd
+00000253  66667365          o16 jnc 0x2bc
+00000257  7420              jz 0x279
+00000259  2B3D20706F72      sub edi,[dword 0x726f7020]
+0000025F  745F              jz 0x2c0
+00000261  627974            bound edi,[ecx+0x74]
+00000264  655F              gs pop edi
+00000266  696E285245475F    imul ebp,[esi+0x28],dword 0x5f474552
+0000026D  53                push ebx
+0000026E  43                inc ebx
+0000026F  52                push edx
+00000270  45                inc ebp
+00000271  45                inc ebp
+00000272  4E                dec esi
+00000273  5F                pop edi
+00000274  44                inc esp
+00000275  41                inc ecx
+00000276  54                push esp
+00000277  41                inc ecx
+00000278  293B              sub [ebx],edi
+0000027A  0A0A              or cl,[edx]
+0000027C  092F              or [edi],ebp
+0000027E  2F                das
+0000027F  6D                insd
+00000280  756C              jnz 0x2ee
+00000282  7420              jz 0x2a4
+00000284  627920            bound edi,[ecx+0x20]
+00000287  3220              xor ah,[eax]
+00000289  746F              jz 0x2fa
+0000028B  20636F            and [ebx+0x6f],ah
+0000028E  6E                outsb
+0000028F  7665              jna 0x2f6
+00000291  7274              jc 0x307
+00000293  20746F20          and [edi+ebp*2+0x20],dh
+00000297  636861            arpl [eax+0x61],bp
+0000029A  7220              jc 0x2bc
+0000029C  63656C            arpl [ebp+0x6c],sp
+0000029F  6C                insb
+000002A0  206F66            and [edi+0x66],ch
+000002A3  667365            o16 jnc 0x30b
+000002A6  740A              jz 0x2b2
+000002A8  097265            or [edx+0x65],esi
+000002AB  7475              jz 0x322
+000002AD  726E              jc 0x31d
+000002AF  206F66            and [edi+0x66],ch
+000002B2  667365            o16 jnc 0x31a
+000002B5  742A              jz 0x2e1
+000002B7  323B              xor bh,[ebx]
+000002B9  0A0A              or cl,[edx]
+000002BB  7D0A              jnl 0x2c7
+000002BD  0A766F            or dh,[esi+0x6f]
+000002C0  6964207365745F63  imul esp,[eax+0x73],dword 0x635f7465
+000002C8  7572              jnz 0x33c
+000002CA  736F              jnc 0x33b
+000002CC  7228              jc 0x2f6
+000002CE  696E74206F6666    imul ebp,[esi+0x74],dword 0x66666f20
+000002D5  7365              jnc 0x33c
+000002D7  7429              jz 0x302
+000002D9  7B0A              jpo 0x2e5
+000002DB  092F              or [edi],ebp
+000002DD  2F                das
+000002DE  7468              jz 0x348
+000002E0  6973206D617920    imul esi,[ebx+0x20],dword 0x2079616d
+000002E7  626520            bound esp,[ebp+0x20]
+000002EA  696E636F6D706C    imul ebp,[esi+0x63],dword 0x6c706d6f
+000002F1  657465            gs jz 0x359
+000002F4  0A09              or cl,[ecx]
+000002F6  6F                outsd
+000002F7  66667365          o16 jnc 0x360
+000002FB  7420              jz 0x31d
+000002FD  2F                das
+000002FE  3D20323B20        cmp eax,0x203b3220
+00000303  2F                das
+00000304  2F                das
+00000305  63656C            arpl [ebp+0x6c],sp
+00000308  6C                insb
+00000309  20746F20          and [edi+ebp*2+0x20],dh
+0000030D  636861            arpl [eax+0x61],bp
+00000310  7220              jc 0x332
+00000312  6F                outsd
+00000313  66667365          o16 jnc 0x37c
+00000317  740A              jz 0x323
+00000319  09706F            or [eax+0x6f],esi
+0000031C  7274              jc 0x392
+0000031E  5F                pop edi
+0000031F  627974            bound edi,[ecx+0x74]
+00000322  655F              gs pop edi
+00000324  6F                outsd
+00000325  7574              jnz 0x39b
+00000327  285245            sub [edx+0x45],dl
+0000032A  47                inc edi
+0000032B  5F                pop edi
+0000032C  53                push ebx
+0000032D  43                inc ebx
+0000032E  52                push edx
+0000032F  45                inc ebp
+00000330  45                inc ebp
+00000331  4E                dec esi
+00000332  5F                pop edi
+00000333  43                inc ebx
+00000334  54                push esp
+00000335  52                push edx
+00000336  4C                dec esp
+00000337  2C31              sub al,0x31
+00000339  3429              xor al,0x29
+0000033B  3B0A              cmp ecx,[edx]
+0000033D  09706F            or [eax+0x6f],esi
+00000340  7274              jc 0x3b6
+00000342  5F                pop edi
+00000343  627974            bound edi,[ecx+0x74]
+00000346  655F              gs pop edi
+00000348  6F                outsd
+00000349  7574              jnz 0x3bf
+0000034B  285245            sub [edx+0x45],dl
+0000034E  47                inc edi
+0000034F  5F                pop edi
+00000350  53                push ebx
+00000351  43                inc ebx
+00000352  52                push edx
+00000353  45                inc ebp
+00000354  45                inc ebp
+00000355  4E                dec esi
+00000356  5F                pop edi
+00000357  44                inc esp
+00000358  41                inc ecx
+00000359  54                push esp
+0000035A  41                inc ecx
+0000035B  2C20              sub al,0x20
+0000035D  28756E            sub [ebp+0x6e],dh
+00000360  7369              jnc 0x3cb
+00000362  676E              a16 outsb
+00000364  6564206368        and [fs:ebx+0x68],ah
+00000369  61                popad
+0000036A  7229              jc 0x395
+0000036C  2028              and [eax],ch
+0000036E  6F                outsd
+0000036F  66667365          o16 jnc 0x3d8
+00000373  7420              jz 0x395
+00000375  3E3E2038          and [ds:eax],bh
+00000379  2929              sub [ecx],ebp
+0000037B  3B0A              cmp ecx,[edx]
+0000037D  09706F            or [eax+0x6f],esi
+00000380  7274              jc 0x3f6
+00000382  5F                pop edi
+00000383  627974            bound edi,[ecx+0x74]
+00000386  655F              gs pop edi
+00000388  6F                outsd
+00000389  7574              jnz 0x3ff
+0000038B  285245            sub [edx+0x45],dl
+0000038E  47                inc edi
+0000038F  5F                pop edi
+00000390  53                push ebx
+00000391  43                inc ebx
+00000392  52                push edx
+00000393  45                inc ebp
+00000394  45                inc ebp
+00000395  4E                dec esi
+00000396  5F                pop edi
+00000397  43                inc ebx
+00000398  54                push esp
+00000399  52                push edx
+0000039A  4C                dec esp
+0000039B  2C31              sub al,0x31
+0000039D  35293B0A0A        xor eax,0xa0a3b29
+000003A2  7D0A              jnl 0x3ae
+000003A4  0A0A              or cl,[edx]
+000003A6  0A2F              or ch,[edi]
+000003A8  2F                das
+000003A9  7072              jo 0x41d
+000003AB  696E7420636861    imul ebp,[esi+0x74],dword 0x61686320
+000003B2  7220              jc 0x3d4
+000003B4  6F                outsd
+000003B5  6E                outsb
+000003B6  207363            and [ebx+0x63],dh
+000003B9  7265              jc 0x420
+000003BB  656E              gs outsb
+000003BD  206174            and [ecx+0x74],ah
+000003C0  20636F            and [ebx+0x6f],ah
+000003C3  6C                insb
+000003C4  2C72              sub al,0x72
+000003C6  6F                outsd
+000003C7  7720              ja 0x3e9
+000003C9  6F                outsd
+000003CA  7220              jc 0x3ec
+000003CC  637572            arpl [ebp+0x72],si
+000003CF  736F              jnc 0x440
+000003D1  720A              jc 0x3dd
+000003D3  766F              jna 0x444
+000003D5  6964207072696E74  imul esp,[eax+0x70],dword 0x746e6972
+000003DD  5F                pop edi
+000003DE  636861            arpl [eax+0x61],bp
+000003E1  7228              jc 0x40b
+000003E3  756E              jnz 0x453
+000003E5  7369              jnc 0x450
+000003E7  676E              a16 outsb
+000003E9  6564206368        and [fs:ebx+0x68],ah
+000003EE  61                popad
+000003EF  7220              jc 0x411
+000003F1  636861            arpl [eax+0x61],bp
+000003F4  7261              jc 0x457
+000003F6  63746572          arpl [ebp+0x72],si
+000003FA  2C20              sub al,0x20
+000003FC  696E7420636F6C    imul ebp,[esi+0x74],dword 0x6c6f6320
+00000403  2C20              sub al,0x20
+00000405  696E7420726F77    imul ebp,[esi+0x74],dword 0x776f7220
+0000040C  2C20              sub al,0x20
+0000040E  756E              jnz 0x47e
+00000410  7369              jnc 0x47b
+00000412  676E              a16 outsb
+00000414  6564206368        and [fs:ebx+0x68],ah
+00000419  61                popad
+0000041A  7220              jc 0x43c
+0000041C  61                popad
+0000041D  7474              jz 0x493
+0000041F  7269              jc 0x48a
+00000421  627574            bound esi,[ebp+0x74]
+00000424  655F              gs pop edi
+00000426  627974            bound edi,[ecx+0x74]
+00000429  65297B0A          sub [gs:ebx+0xa],edi
+0000042D  092F              or [edi],ebp
+0000042F  2F                das
+00000430  637265            arpl [edx+0x65],si
+00000433  61                popad
+00000434  7465              jz 0x49b
+00000436  206120            and [ecx+0x20],ah
+00000439  627974            bound edi,[ecx+0x74]
+0000043C  652028            and [gs:eax],ch
+0000043F  636861            arpl [eax+0x61],bp
+00000442  7229              jc 0x46d
+00000444  20706F            and [eax+0x6f],dh
+00000447  696E7465722074    imul ebp,[esi+0x74],dword 0x74207265
+0000044E  6F                outsd
+0000044F  207374            and [ebx+0x74],dh
+00000452  61                popad
+00000453  7274              jc 0x4c9
+00000455  206F66            and [edi+0x66],ch
+00000458  207669            and [esi+0x69],dh
+0000045B  64206D65          and [fs:ebp+0x65],ch
+0000045F  6D                insd
+00000460  0A09              or cl,[ecx]
+00000462  2F                das
+00000463  2F                das
+00000464  756E              jnz 0x4d4
+00000466  7369              jnc 0x4d1
+00000468  676E              a16 outsb
+0000046A  6564206368        and [fs:ebx+0x68],ah
+0000046F  61                popad
+00000470  7220              jc 0x492
+00000472  2A7669            sub dh,[esi+0x69]
+00000475  646D              fs insd
+00000477  656D              gs insd
+00000479  203D2028756E      and [dword 0x6e752820],bh
+0000047F  7369              jnc 0x4ea
+00000481  676E              a16 outsb
+00000483  6564206368        and [fs:ebx+0x68],ah
+00000488  61                popad
+00000489  7220              jc 0x4ab
+0000048B  2A29              sub ch,[ecx]
+0000048D  205649            and [esi+0x49],dl
+00000490  44                inc esp
+00000491  45                inc ebp
+00000492  4F                dec edi
+00000493  5F                pop edi
+00000494  41                inc ecx
+00000495  44                inc esp
+00000496  44                inc esp
+00000497  52                push edx
+00000498  45                inc ebp
+00000499  53                push ebx
+0000049A  53                push ebx
+0000049B  3B0A              cmp ecx,[edx]
+0000049D  09756E            or [ebp+0x6e],esi
+000004A0  7369              jnc 0x50b
+000004A2  676E              a16 outsb
+000004A4  6564206368        and [fs:ebx+0x68],ah
+000004A9  61                popad
+000004AA  7220              jc 0x4cc
+000004AC  2A7669            sub dh,[esi+0x69]
+000004AF  646D              fs insd
+000004B1  656D              gs insd
+000004B3  203D2028756E      and [dword 0x6e752820],bh
+000004B9  7369              jnc 0x524
+000004BB  676E              a16 outsb
+000004BD  6564206368        and [fs:ebx+0x68],ah
+000004C2  61                popad
+000004C3  7220              jc 0x4e5
+000004C5  2A29              sub ch,[ecx]
+000004C7  2030              and [eax],dh
+000004C9  7862              js 0x52d
+000004CB  3830              cmp [eax],dh
+000004CD  3030              xor [eax],dh
+000004CF  3B0A              cmp ecx,[edx]
+000004D1  092A              or [edx],ebp
+000004D3  7669              jna 0x53e
+000004D5  646D              fs insd
+000004D7  656D              gs insd
+000004D9  3D63686172        cmp eax,0x72616863
+000004DE  61                popad
+000004DF  63746572          arpl [ebp+0x72],si
+000004E3  3B0A              cmp ecx,[edx]
+000004E5  0A2F              or ch,[edi]
+000004E7  2A0A              sub cl,[edx]
+000004E9  092F              or [edi],ebp
+000004EB  2F                das
+000004EC  69662061747472    imul esp,[esi+0x20],dword 0x72747461
+000004F3  69627574652062    imul esp,[edx+0x75],dword 0x62206574
+000004FA  7974              jns 0x570
+000004FC  65206973          and [gs:ecx+0x73],ch
+00000500  207A65            and [edx+0x65],bh
+00000503  726F              jc 0x574
+00000505  2C20              sub al,0x20
+00000507  61                popad
+00000508  7373              jnc 0x57d
+0000050A  756D              jnz 0x579
+0000050C  6520646566        and [gs:ebp+0x66],ah
+00000511  61                popad
+00000512  756C              jnz 0x580
+00000514  7420              jz 0x536
+00000516  7374              jnc 0x58c
+00000518  796C              jns 0x586
+0000051A  650A09            or cl,[gs:ecx]
+0000051D  69662028216174    imul esp,[esi+0x20],dword 0x74612128
+00000524  7472              jz 0x598
+00000526  69627574655F62    imul esp,[edx+0x75],dword 0x625f6574
+0000052D  7974              jns 0x5a3
+0000052F  652920            sub [gs:eax],esp
+00000532  7B0A              jpo 0x53e
+00000534  0909              or [ecx],ecx
+00000536  61                popad
+00000537  7474              jz 0x5ad
+00000539  7269              jc 0x5a4
+0000053B  627574            bound esi,[ebp+0x74]
+0000053E  655F              gs pop edi
+00000540  627974            bound edi,[ecx+0x74]
+00000543  653D57484954      gs cmp eax,0x54494857
+00000549  45                inc ebp
+0000054A  5F                pop edi
+0000054B  4F                dec edi
+0000054C  4E                dec esi
+0000054D  5F                pop edi
+0000054E  42                inc edx
+0000054F  4C                dec esp
+00000550  41                inc ecx
+00000551  43                inc ebx
+00000552  4B                dec ebx
+00000553  3B0A              cmp ecx,[edx]
+00000555  097D0A            or [ebp+0xa],edi
+00000558  0A09              or cl,[ecx]
+0000055A  2F                das
+0000055B  2F                das
+0000055C  67657420          gs jz 0x580
+00000560  7669              jna 0x5cb
+00000562  64206D65          and [fs:ebp+0x65],ch
+00000566  6D                insd
+00000567  206F66            and [edi+0x66],ch
+0000056A  667365            o16 jnc 0x5d2
+0000056D  7420              jz 0x58f
+0000056F  666F              outsw
+00000571  7220              jc 0x593
+00000573  7363              jnc 0x5d8
+00000575  7265              jc 0x5dc
+00000577  656E              gs outsb
+00000579  206C6F63          and [edi+ebp*2+0x63],ch
+0000057D  61                popad
+0000057E  7469              jz 0x5e9
+00000580  6F                outsd
+00000581  6E                outsb
+00000582  0A09              or cl,[ecx]
+00000584  756E              jnz 0x5f4
+00000586  7369              jnc 0x5f1
+00000588  676E              a16 outsb
+0000058A  656420696E        and [fs:ecx+0x6e],ch
+0000058F  7420              jz 0x5b1
+00000591  6F                outsd
+00000592  66667365          o16 jnc 0x5fb
+00000596  743B              jz 0x5d3
+00000598  0A0A              or cl,[edx]
+0000059A  092F              or [edi],ebp
+0000059C  2F                das
+0000059D  696620636F6C20    imul esp,[esi+0x20],dword 0x206c6f63
+000005A4  61                popad
+000005A5  6E                outsb
+000005A6  6420726F          and [fs:edx+0x6f],dh
+000005AA  7720              ja 0x5cc
+000005AC  61                popad
+000005AD  7265              jc 0x614
+000005AF  206E6F            and [esi+0x6f],ch
+000005B2  6E                outsb
+000005B3  2D6E656761        sub eax,0x6167656e
+000005B8  7469              jz 0x623
+000005BA  7665              jna 0x621
+000005BC  207573            and [ebp+0x73],dh
+000005BF  6520746865        and [gs:eax+ebp*2+0x65],dh
+000005C4  6D                insd
+000005C5  20666F            and [esi+0x6f],ah
+000005C8  7220              jc 0x5ea
+000005CA  6F                outsd
+000005CB  66667365          o16 jnc 0x634
+000005CF  740A              jz 0x5db
+000005D1  096966            or [ecx+0x66],ebp
+000005D4  2028              and [eax],ch
+000005D6  636F6C            arpl [edi+0x6c],bp
+000005D9  203E              and [esi],bh
+000005DB  3D20302026        cmp eax,0x26203020
+000005E0  2620726F          and [es:edx+0x6f],dh
+000005E4  7720              ja 0x606
+000005E6  3E3D2030297B      ds cmp eax,0x7b293020
+000005EC  0A09              or cl,[ecx]
+000005EE  096F66            or [edi+0x66],ebp
+000005F1  667365            o16 jnc 0x659
+000005F4  743D              jz 0x633
+000005F6  6765745F          gs jz 0x659
+000005FA  7363              jnc 0x65f
+000005FC  7265              jc 0x663
+000005FE  656E              gs outsb
+00000600  5F                pop edi
+00000601  6F                outsd
+00000602  66667365          o16 jnc 0x66b
+00000606  7428              jz 0x630
+00000608  636F6C            arpl [edi+0x6c],bp
+0000060B  2C72              sub al,0x72
+0000060D  6F                outsd
+0000060E  7729              ja 0x639
+00000610  3B0A              cmp ecx,[edx]
+00000612  097D0A            or [ebp+0xa],edi
+00000615  09656C            or [ebp+0x6c],esp
+00000618  7365              jnc 0x67f
+0000061A  7B0A              jpo 0x626
+0000061C  092F              or [edi],ebp
+0000061E  2F                das
+0000061F  656C              gs insb
+00000621  7365              jnc 0x688
+00000623  207573            and [ebp+0x73],dh
+00000626  65206375          and [gs:ebx+0x75],ah
+0000062A  7273              jc 0x69f
+0000062C  6F                outsd
+0000062D  7220              jc 0x64f
+0000062F  706F              jo 0x6a0
+00000631  7369              jnc 0x69c
+00000633  7469              jz 0x69e
+00000635  6F                outsd
+00000636  6E                outsb
+00000637  0A09              or cl,[ecx]
+00000639  096F66            or [edi+0x66],ebp
+0000063C  667365            o16 jnc 0x6a4
+0000063F  743D              jz 0x67e
+00000641  6765745F          gs jz 0x6a4
+00000645  637572            arpl [ebp+0x72],si
+00000648  736F              jnc 0x6b9
+0000064A  7228              jc 0x674
+0000064C  293B              sub [ebx],edi
+0000064E  0A09              or cl,[ecx]
+00000650  7D0A              jnl 0x65c
+00000652  0A09              or cl,[ecx]
+00000654  2F                das
+00000655  2F                das
+00000656  69662073656520    imul esp,[esi+0x20],dword 0x20656573
+0000065D  6E                outsb
+0000065E  65776C            gs ja 0x6cd
+00000661  696E6520736574    imul ebp,[esi+0x65],dword 0x74657320
+00000668  206F66            and [edi+0x66],ch
+0000066B  667365            o16 jnc 0x6d3
+0000066E  7420              jz 0x690
+00000670  746F              jz 0x6e1
+00000672  20656E            and [ebp+0x6e],ah
+00000675  64206F66          and [fs:edi+0x66],ch
+00000679  206375            and [ebx+0x75],ah
+0000067C  7272              jc 0x6f0
+0000067E  656E              gs outsb
+00000680  7420              jz 0x6a2
+00000682  726F              jc 0x6f3
+00000684  770A              ja 0x690
+00000686  092F              or [edi],ebp
+00000688  2F                das
+00000689  4E                dec esi
+0000068A  69636B206D756C    imul esp,[ebx+0x6b],dword 0x6c756d20
+00000691  7469              jz 0x6fc
+00000693  706C              jo 0x701
+00000695  696564204D4158    imul esp,[ebp+0x64],dword 0x58414d20
+0000069C  5F                pop edi
+0000069D  43                inc ebx
+0000069E  4F                dec edi
+0000069F  4C                dec esp
+000006A0  53                push ebx
+000006A1  206279            and [edx+0x79],ah
+000006A4  2032              and [edx],dh
+000006A6  206265            and [edx+0x65],ah
+000006A9  636175            arpl [ecx+0x75],sp
+000006AC  7365              jnc 0x713
+000006AE  206561            and [ebp+0x61],ah
+000006B1  636820            arpl [eax+0x20],bp
+000006B4  63656C            arpl [ebp+0x6c],sp
+000006B7  6C                insb
+000006B8  206973            and [ecx+0x73],ch
+000006BB  2032              and [edx],dh
+000006BD  206279            and [edx+0x79],ah
+000006C0  7465              jz 0x727
+000006C2  730A              jnc 0x6ce
+000006C4  096966            or [ecx+0x66],ebp
+000006C7  2028              and [eax],ch
+000006C9  636861            arpl [eax+0x61],bp
+000006CC  7261              jc 0x72f
+000006CE  63746572          arpl [ebp+0x72],si
+000006D2  203D3D20275C      and [dword 0x5c27203d],bh
+000006D8  6E                outsb
+000006D9  27                daa
+000006DA  297B0A            sub [ebx+0xa],edi
+000006DD  0909              or [ecx],ecx
+000006DF  696E7420726F77    imul ebp,[esi+0x74],dword 0x776f7220
+000006E6  7320              jnc 0x708
+000006E8  3D206F6666        cmp eax,0x66666f20
+000006ED  7365              jnc 0x754
+000006EF  7420              jz 0x711
+000006F1  2F                das
+000006F2  2028              and [eax],ch
+000006F4  322A              xor ch,[edx]
+000006F6  4D                dec ebp
+000006F7  41                inc ecx
+000006F8  58                pop eax
+000006F9  5F                pop edi
+000006FA  43                inc ebx
+000006FB  4F                dec edi
+000006FC  4C                dec esp
+000006FD  53                push ebx
+000006FE  293B              sub [ebx],edi
+00000700  0A09              or cl,[ecx]
+00000702  096F66            or [edi+0x66],ebp
+00000705  667365            o16 jnc 0x76d
+00000708  7420              jz 0x72a
+0000070A  3D20676574        cmp eax,0x74656720
+0000070F  5F                pop edi
+00000710  7363              jnc 0x775
+00000712  7265              jc 0x779
+00000714  656E              gs outsb
+00000716  5F                pop edi
+00000717  6F                outsd
+00000718  66667365          o16 jnc 0x781
+0000071C  7428              jz 0x746
+0000071E  37                aaa
+0000071F  392C72            cmp [edx+esi*2],ebp
+00000722  6F                outsd
+00000723  7773              ja 0x798
+00000725  293B              sub [ebx],edi
+00000727  0A09              or cl,[ecx]
+00000729  7D0A              jnl 0x735
+0000072B  0A09              or cl,[ecx]
+0000072D  2F                das
+0000072E  2F                das
+0000072F  4F                dec edi
+00000730  7468              jz 0x79a
+00000732  657277            gs jc 0x7ac
+00000735  6973652C207772    imul esi,[ebx+0x65],dword 0x7277202c
+0000073C  6974652074686520  imul esi,[ebp+0x20],dword 0x20656874
+00000744  636861            arpl [eax+0x61],bp
+00000747  7261              jc 0x7aa
+00000749  63746572          arpl [ebp+0x72],si
+0000074D  20616E            and [ecx+0x6e],ah
+00000750  64206974          and [fs:ecx+0x74],ch
+00000754  7320              jnc 0x776
+00000756  61                popad
+00000757  7474              jz 0x7cd
+00000759  7269              jc 0x7c4
+0000075B  627574            bound esi,[ebp+0x74]
+0000075E  6520747065        and [gs:eax+esi*2+0x65],dh
+00000763  20746F0A          and [edi+ebp*2+0xa],dh
+00000767  092F              or [edi],ebp
+00000769  2F                das
+0000076A  7669              jna 0x7d5
+0000076C  64206D65          and [fs:ebp+0x65],ch
+00000770  6D                insd
+00000771  6F                outsd
+00000772  7279              jc 0x7ed
+00000774  206174            and [ecx+0x74],ah
+00000777  206361            and [ebx+0x61],ah
+0000077A  6C                insb
+0000077B  63756C            arpl [ebp+0x6c],si
+0000077E  61                popad
+0000077F  7465              jz 0x7e6
+00000781  64206F66          and [fs:edi+0x66],ch
+00000785  667365            o16 jnc 0x7ed
+00000788  740A              jz 0x794
+0000078A  09656C            or [ebp+0x6c],esp
+0000078D  7365              jnc 0x7f4
+0000078F  207B0A            and [ebx+0xa],bh
+00000792  0909              or [ecx],ecx
+00000794  2F                das
+00000795  2F                das
+00000796  2A7669            sub dh,[esi+0x69]
+00000799  646D              fs insd
+0000079B  656D              gs insd
+0000079D  3D63686172        cmp eax,0x72616863
+000007A2  61                popad
+000007A3  63746572          arpl [ebp+0x72],si
+000007A7  3B0A              cmp ecx,[edx]
+000007A9  0909              or [ecx],ecx
+000007AB  7669              jna 0x816
+000007AD  646D              fs insd
+000007AF  656D              gs insd
+000007B1  5B                pop ebx
+000007B2  6F                outsd
+000007B3  66667365          o16 jnc 0x81c
+000007B7  745D              jz 0x816
+000007B9  3D63686172        cmp eax,0x72616863
+000007BE  61                popad
+000007BF  63746572          arpl [ebp+0x72],si
+000007C3  3B0A              cmp ecx,[edx]
+000007C5  0909              or [ecx],ecx
+000007C7  7669              jna 0x832
+000007C9  646D              fs insd
+000007CB  656D              gs insd
+000007CD  5B                pop ebx
+000007CE  6F                outsd
+000007CF  66667365          o16 jnc 0x838
+000007D3  742B              jz 0x800
+000007D5  315D3D            xor [ebp+0x3d],ebx
+000007D8  61                popad
+000007D9  7474              jz 0x84f
+000007DB  7269              jc 0x846
+000007DD  627574            bound esi,[ebp+0x74]
+000007E0  655F              gs pop edi
+000007E2  627974            bound edi,[ecx+0x74]
+000007E5  653B0A            cmp ecx,[gs:edx]
+000007E8  0909              or [ecx],ecx
+000007EA  2F                das
+000007EB  2F                das
+000007EC  7669              jna 0x857
+000007EE  646D              fs insd
+000007F0  656D              gs insd
+000007F2  5B                pop ebx
+000007F3  6F                outsd
+000007F4  66667365          o16 jnc 0x85d
+000007F8  745D              jz 0x857
+000007FA  203D20636861      and [dword 0x61686320],bh
+00000800  7261              jc 0x863
+00000802  63746572          arpl [ebp+0x72],si
+00000806  3B0A              cmp ecx,[edx]
+00000808  0909              or [ecx],ecx
+0000080A  2F                das
+0000080B  2F                das
+0000080C  7669              jna 0x877
+0000080E  646D              fs insd
+00000810  656D              gs insd
+00000812  5B                pop ebx
+00000813  6F                outsd
+00000814  66667365          o16 jnc 0x87d
+00000818  742B              jz 0x845
+0000081A  315D20            xor [ebp+0x20],ebx
+0000081D  3D20617474        cmp eax,0x74746120
+00000822  7269              jc 0x88d
+00000824  627574            bound esi,[ebp+0x74]
+00000827  655F              gs pop edi
+00000829  627974            bound edi,[ecx+0x74]
+0000082C  653B09            cmp ecx,[gs:ecx]
+0000082F  0A09              or cl,[ecx]
+00000831  7D0A              jnl 0x83d
+00000833  0A09              or cl,[ecx]
+00000835  2F                das
+00000836  2F                das
+00000837  55                push ebp
+00000838  7064              jo 0x89e
+0000083A  61                popad
+0000083B  7465              jz 0x8a2
+0000083D  206F66            and [edi+0x66],ch
+00000840  667365            o16 jnc 0x8a8
+00000843  7420              jz 0x865
+00000845  746F              jz 0x8b6
+00000847  206E65            and [esi+0x65],ch
+0000084A  7874              js 0x8c0
+0000084C  206368            and [ebx+0x68],ah
+0000084F  61                popad
+00000850  7220              jc 0x872
+00000852  63656C            arpl [ebp+0x6c],sp
+00000855  6C                insb
+00000856  2C20              sub al,0x20
+00000858  3220              xor ah,[eax]
+0000085A  627974            bound edi,[ecx+0x74]
+0000085D  657320            gs jnc 0x880
+00000860  61                popad
+00000861  6865616420        push dword 0x20646165
+00000866  6F                outsd
+00000867  66206375          o16 and [ebx+0x75],ah
+0000086B  7272              jc 0x8df
+0000086D  656E              gs outsb
+0000086F  7420              jz 0x891
+00000871  63656C            arpl [ebp+0x6c],sp
+00000874  6C                insb
+00000875  0A09              or cl,[ecx]
+00000877  6F                outsd
+00000878  66667365          o16 jnc 0x8e1
+0000087C  7420              jz 0x89e
+0000087E  2B3D323B0A0A      sub edi,[dword 0xa0a3b32]
+00000884  092F              or [edi],ebp
+00000886  2F                das
+00000887  6D                insd
+00000888  61                popad
+00000889  6B652073          imul esp,[ebp+0x20],byte +0x73
+0000088D  63726F            arpl [edx+0x6f],si
+00000890  6C                insb
+00000891  6C                insb
+00000892  696E672061646A    imul ebp,[esi+0x67],dword 0x6a646120
+00000899  7573              jnz 0x90e
+0000089B  746D              jz 0x90a
+0000089D  656E              gs outsb
+0000089F  740A              jz 0x8ab
+000008A1  096F66            or [edi+0x66],ebp
+000008A4  667365            o16 jnc 0x90c
+000008A7  7420              jz 0x8c9
+000008A9  3D2068616E        cmp eax,0x6e616820
+000008AE  646C              fs insb
+000008B0  655F              gs pop edi
+000008B2  7363              jnc 0x917
+000008B4  726F              jc 0x925
+000008B6  6C                insb
+000008B7  6C                insb
+000008B8  696E67286F6666    imul ebp,[esi+0x67],dword 0x66666f28
+000008BF  7365              jnc 0x926
+000008C1  7429              jz 0x8ec
+000008C3  3B0A              cmp ecx,[edx]
+000008C5  090A              or [edx],ecx
+000008C7  092F              or [edi],ebp
+000008C9  2F                das
+000008CA  55                push ebp
+000008CB  7064              jo 0x931
+000008CD  61                popad
+000008CE  7465              jz 0x935
+000008D0  206375            and [ebx+0x75],ah
+000008D3  7273              jc 0x948
+000008D5  6F                outsd
+000008D6  7220              jc 0x8f8
+000008D8  706F              jo 0x949
+000008DA  7369              jnc 0x945
+000008DC  7469              jz 0x947
+000008DE  6F                outsd
+000008DF  6E                outsb
+000008E0  206F6E            and [edi+0x6e],ch
+000008E3  207363            and [ebx+0x63],dh
+000008E6  7265              jc 0x94d
+000008E8  656E              gs outsb
+000008EA  20646576          and [ebp+0x76],ah
+000008EE  6963650A097365    imul esp,[ebx+0x65],dword 0x6573090a
+000008F5  745F              jz 0x956
+000008F7  637572            arpl [ebp+0x72],si
+000008FA  736F              jnc 0x96b
+000008FC  7228              jc 0x926
+000008FE  6F                outsd
+000008FF  66667365          o16 jnc 0x968
+00000903  7429              jz 0x92e
+00000905  3B0A              cmp ecx,[edx]
+00000907  2A2F              sub ch,[edi]
+00000909  0A7D0A            or bh,[ebp+0xa]
+0000090C  0A766F            or dh,[esi+0x6f]
+0000090F  6964207072696E74  imul esp,[eax+0x70],dword 0x746e6972
+00000917  5F                pop edi
+00000918  61                popad
+00000919  7428              jz 0x943
+0000091B  636861            arpl [eax+0x61],bp
+0000091E  722A              jc 0x94a
+00000920  206D65            and [ebp+0x65],ch
+00000923  7373              jnc 0x998
+00000925  61                popad
+00000926  67652C20          gs sub al,0x20
+0000092A  696E7420636F6C    imul ebp,[esi+0x74],dword 0x6c6f6320
+00000931  2C20              sub al,0x20
+00000933  696E7420726F77    imul ebp,[esi+0x74],dword 0x776f7220
+0000093A  297B0A            sub [ebx+0xa],edi
+0000093D  092F              or [edi],ebp
+0000093F  2F                das
+00000940  55                push ebp
+00000941  7064              jo 0x9a7
+00000943  61                popad
+00000944  7465              jz 0x9ab
+00000946  206375            and [ebx+0x75],ah
+00000949  7273              jc 0x9be
+0000094B  6F                outsd
+0000094C  7220              jc 0x96e
+0000094E  696620636F6C20    imul esp,[esi+0x20],dword 0x206c6f63
+00000955  61                popad
+00000956  6E                outsb
+00000957  6420726F          and [fs:edx+0x6f],dh
+0000095B  7720              ja 0x97d
+0000095D  6E                outsb
+0000095E  6F                outsd
+0000095F  7420              jz 0x981
+00000961  6E                outsb
+00000962  656761            gs a16 popad
+00000965  7469              jz 0x9d0
+00000967  7665              jna 0x9ce
+00000969  0A09              or cl,[ecx]
+0000096B  696628636F6C3E    imul esp,[esi+0x28],dword 0x3e6c6f63
+00000972  3D30202626        cmp eax,0x26262030
+00000977  20726F            and [edx+0x6f],dh
+0000097A  773E              ja 0x9ba
+0000097C  3D3029207B        cmp eax,0x7b202930
+00000981  0A09              or cl,[ecx]
+00000983  097365            or [ebx+0x65],esi
+00000986  745F              jz 0x9e7
+00000988  637572            arpl [ebp+0x72],si
+0000098B  736F              jnc 0x9fc
+0000098D  7228              jc 0x9b7
+0000098F  6765745F          gs jz 0x9f2
+00000993  7363              jnc 0x9f8
+00000995  7265              jc 0x9fc
+00000997  656E              gs outsb
+00000999  5F                pop edi
+0000099A  6F                outsd
+0000099B  66667365          o16 jnc 0xa04
+0000099F  7428              jz 0x9c9
+000009A1  636F6C            arpl [edi+0x6c],bp
+000009A4  2C72              sub al,0x72
+000009A6  6F                outsd
+000009A7  7729              ja 0x9d2
+000009A9  293B              sub [ebx],edi
+000009AB  0A09              or cl,[ecx]
+000009AD  7D0A              jnl 0x9b9
+000009AF  092F              or [edi],ebp
+000009B1  2F                das
+000009B2  4C                dec esp
+000009B3  6F                outsd
+000009B4  6F                outsd
+000009B5  7020              jo 0x9d7
+000009B7  7468              jz 0xa21
+000009B9  726F              jc 0xa2a
+000009BB  7567              jnz 0xa24
+000009BD  6820656163        push dword 0x63616520
+000009C2  6820636861        push dword 0x61686320
+000009C7  7220              jc 0x9e9
+000009C9  6F                outsd
+000009CA  66206D65          o16 and [ebp+0x65],ch
+000009CE  7373              jnc 0xa43
+000009D0  61                popad
+000009D1  676520616E        and [gs:bx+di+0x6e],ah
+000009D6  64207072          and [fs:eax+0x72],dh
+000009DA  696E742069740A    imul ebp,[esi+0x74],dword 0xa746920
+000009E1  09696E            or [ecx+0x6e],ebp
+000009E4  7420              jz 0xa06
+000009E6  693D303B0A097768  imul edi,[dword 0x90a3b30],dword 0x6c696877
+         -696C
+000009F0  65286D65          sub [gs:ebp+0x65],ch
+000009F4  7373              jnc 0xa69
+000009F6  61                popad
+000009F7  67655B            gs pop ebx
+000009FA  695D20213D2030    imul ebx,[ebp+0x20],dword 0x30203d21
+00000A01  297B0A            sub [ebx+0xa],edi
+00000A04  0909              or [ecx],ecx
+00000A06  7072              jo 0xa7a
+00000A08  696E745F636861    imul ebp,[esi+0x74],dword 0x6168635f
+00000A0F  7228              jc 0xa39
+00000A11  6D                insd
+00000A12  657373            gs jnc 0xa88
+00000A15  61                popad
+00000A16  67655B            gs pop ebx
+00000A19  692B2B5D2C20      imul ebp,[ebx],dword 0x202c5d2b
+00000A1F  636F6C            arpl [edi+0x6c],bp
+00000A22  2C20              sub al,0x20
+00000A24  726F              jc 0xa95
+00000A26  772C              ja 0xa54
+00000A28  205748            and [edi+0x48],dl
+00000A2B  49                dec ecx
+00000A2C  54                push esp
+00000A2D  45                inc ebp
+00000A2E  5F                pop edi
+00000A2F  4F                dec edi
+00000A30  4E                dec esi
+00000A31  5F                pop edi
+00000A32  42                inc edx
+00000A33  4C                dec esp
+00000A34  41                inc ecx
+00000A35  43                inc ebx
+00000A36  4B                dec ebx
+00000A37  293B              sub [ebx],edi
+00000A39  0A09              or cl,[ecx]
+00000A3B  7D0A              jnl 0xa47
+00000A3D  7D0A              jnl 0xa49
+00000A3F  0A766F            or dh,[esi+0x6f]
+00000A42  6964207072696E74  imul esp,[eax+0x70],dword 0x746e6972
+00000A4A  286368            sub [ebx+0x68],ah
+00000A4D  61                popad
+00000A4E  722A              jc 0xa7a
+00000A50  206D65            and [ebp+0x65],ch
+00000A53  7373              jnc 0xac8
+00000A55  61                popad
+00000A56  67652920          sub [gs:bx+si],esp
+00000A5A  7B0A              jpo 0xa66
+00000A5C  097072            or [eax+0x72],esi
+00000A5F  696E745F617428    imul ebp,[esi+0x74],dword 0x2874615f
+00000A66  6D                insd
+00000A67  657373            gs jnc 0xadd
+00000A6A  61                popad
+00000A6B  67652C2D          gs sub al,0x2d
+00000A6F  312C2D31293B0A    xor [ebp+0xa3b2931],ebp
+00000A76  7D0A              jnl 0xa82
+00000A78  0A766F            or dh,[esi+0x6f]
+00000A7B  696420636C656172  imul esp,[eax+0x63],dword 0x7261656c
+00000A83  5F                pop edi
+00000A84  7363              jnc 0xae9
+00000A86  7265              jc 0xaed
+00000A88  656E              gs outsb
+00000A8A  2829              sub [ecx],ch
+00000A8C  207B0A            and [ebx+0xa],bh
+00000A8F  09696E            or [ecx+0x6e],ebp
+00000A92  7420              jz 0xab4
+00000A94  726F              jc 0xb05
+00000A96  7720              ja 0xab8
+00000A98  3D20303B0A        cmp eax,0xa3b3020
+00000A9D  09696E            or [ecx+0x6e],ebp
+00000AA0  7420              jz 0xac2
+00000AA2  636F6C            arpl [edi+0x6c],bp
+00000AA5  203D20303B0A      and [dword 0xa3b3020],bh
+00000AAB  0A09              or cl,[ecx]
+00000AAD  2F                das
+00000AAE  2F                das
+00000AAF  7772              ja 0xb23
+00000AB1  69746520626C616E  imul esi,[ebp+0x20],dword 0x6e616c62
+00000AB9  6B2063            imul esp,[eax],byte +0x63
+00000ABC  6861727320        push dword 0x20737261
+00000AC1  7468              jz 0xb2b
+00000AC3  726F              jc 0xb34
+00000AC5  7567              jnz 0xb2e
+00000AC7  6820766964        push dword 0x64697620
+00000ACC  206D65            and [ebp+0x65],ch
+00000ACF  6D                insd
+00000AD0  0A09              or cl,[ecx]
+00000AD2  666F              outsw
+00000AD4  7220              jc 0xaf6
+00000AD6  28726F            sub [edx+0x6f],dh
+00000AD9  773D              ja 0xb18
+00000ADB  303B              xor [ebx],bh
+00000ADD  20726F            and [edx+0x6f],dh
+00000AE0  773C              ja 0xb1e
+00000AE2  4D                dec ebp
+00000AE3  41                inc ecx
+00000AE4  58                pop eax
+00000AE5  5F                pop edi
+00000AE6  52                push edx
+00000AE7  4F                dec edi
+00000AE8  57                push edi
+00000AE9  53                push ebx
+00000AEA  3B20              cmp esp,[eax]
+00000AEC  726F              jc 0xb5d
+00000AEE  772B              ja 0xb1b
+00000AF0  2B29              sub ebp,[ecx]
+00000AF2  207B0A            and [ebx+0xa],bh
+00000AF5  0909              or [ecx],ecx
+00000AF7  666F              outsw
+00000AF9  7220              jc 0xb1b
+00000AFB  28636F            sub [ebx+0x6f],ah
+00000AFE  6C                insb
+00000AFF  3D303B2063        cmp eax,0x63203b30
+00000B04  6F                outsd
+00000B05  6C                insb
+00000B06  3C4D              cmp al,0x4d
+00000B08  41                inc ecx
+00000B09  58                pop eax
+00000B0A  5F                pop edi
+00000B0B  43                inc ebx
+00000B0C  4F                dec edi
+00000B0D  4C                dec esp
+00000B0E  53                push ebx
+00000B0F  3B20              cmp esp,[eax]
+00000B11  636F6C            arpl [edi+0x6c],bp
+00000B14  2B2B              sub ebp,[ebx]
+00000B16  297B0A            sub [ebx+0xa],edi
+00000B19  0909              or [ecx],ecx
+00000B1B  097072            or [eax+0x72],esi
+00000B1E  696E745F636861    imul ebp,[esi+0x74],dword 0x6168635f
+00000B25  7228              jc 0xb4f
+00000B27  27                daa
+00000B28  2027              and [edi],ah
+00000B2A  2C20              sub al,0x20
+00000B2C  636F6C            arpl [edi+0x6c],bp
+00000B2F  2C72              sub al,0x72
+00000B31  6F                outsd
+00000B32  772C              ja 0xb60
+00000B34  205748            and [edi+0x48],dl
+00000B37  49                dec ecx
+00000B38  54                push esp
+00000B39  45                inc ebp
+00000B3A  5F                pop edi
+00000B3B  4F                dec edi
+00000B3C  4E                dec esi
+00000B3D  5F                pop edi
+00000B3E  42                inc edx
+00000B3F  4C                dec esp
+00000B40  41                inc ecx
+00000B41  43                inc ebx
+00000B42  4B                dec ebx
+00000B43  293B              sub [ebx],edi
+00000B45  0A09              or cl,[ecx]
+00000B47  097D0A            or [ebp+0xa],edi
+00000B4A  097D0A            or [ebp+0xa],edi
+00000B4D  092F              or [edi],ebp
+00000B4F  2F                das
+00000B50  6D                insd
+00000B51  6F                outsd
+00000B52  7665              jna 0xbb9
+00000B54  206375            and [ebx+0x75],ah
+00000B57  7273              jc 0xbcc
+00000B59  6F                outsd
+00000B5A  7220              jc 0xb7c
+00000B5C  626163            bound esp,[ecx+0x63]
+00000B5F  6B0A09            imul ecx,[edx],byte +0x9
+00000B62  7365              jnc 0xbc9
+00000B64  745F              jz 0xbc5
+00000B66  637572            arpl [ebp+0x72],si
+00000B69  736F              jnc 0xbda
+00000B6B  7228              jc 0xb95
+00000B6D  6765745F          gs jz 0xbd0
+00000B71  7363              jnc 0xbd6
+00000B73  7265              jc 0xbda
+00000B75  656E              gs outsb
+00000B77  5F                pop edi
+00000B78  6F                outsd
+00000B79  66667365          o16 jnc 0xbe2
+00000B7D  7428              jz 0xba7
+00000B7F  302C30            xor [eax+esi],ch
+00000B82  2929              sub [ecx],ebp
+00000B84  3B0A              cmp ecx,[edx]
+00000B86  0A7D0A            or bh,[ebp+0xa]
+00000B89  0A696E            or ch,[ecx+0x6e]
+00000B8C  7420              jz 0xbae
+00000B8E  68616E646C        push dword 0x6c646e61
+00000B93  655F              gs pop edi
+00000B95  7363              jnc 0xbfa
+00000B97  726F              jc 0xc08
+00000B99  6C                insb
+00000B9A  6C                insb
+00000B9B  696E6728696E74    imul ebp,[esi+0x67],dword 0x746e6928
+00000BA2  206375            and [ebx+0x75],ah
+00000BA5  7273              jc 0xc1a
+00000BA7  6F                outsd
+00000BA8  725F              jc 0xc09
+00000BAA  6F                outsd
+00000BAB  66667365          o16 jnc 0xc14
+00000BAF  7429              jz 0xbda
+00000BB1  7B0A              jpo 0xbbd
+00000BB3  092F              or [edi],ebp
+00000BB5  2F                das
+00000BB6  69662063757273    imul esp,[esi+0x20],dword 0x73727563
+00000BBD  6F                outsd
+00000BBE  7220              jc 0xbe0
+00000BC0  7769              ja 0xc2b
+00000BC2  7468              jz 0xc2c
+00000BC4  696E2073637265    imul ebp,[esi+0x20],dword 0x65726373
+00000BCB  656E              gs outsb
+00000BCD  207265            and [edx+0x65],dh
+00000BD0  7475              jz 0xc47
+00000BD2  726E              jc 0xc42
+00000BD4  20756E            and [ebp+0x6e],dh
+00000BD7  6D                insd
+00000BD8  6F                outsd
+00000BD9  6469666965640A09  imul esp,[fs:esi+0x69],dword 0x90a6465
+00000BE1  69662863757273    imul esp,[esi+0x28],dword 0x73727563
+00000BE8  6F                outsd
+00000BE9  725F              jc 0xc4a
+00000BEB  6F                outsd
+00000BEC  66667365          o16 jnc 0xc55
+00000BF0  743C              jz 0xc2e
+00000BF2  4D                dec ebp
+00000BF3  41                inc ecx
+00000BF4  58                pop eax
+00000BF5  5F                pop edi
+00000BF6  52                push edx
+00000BF7  4F                dec edi
+00000BF8  57                push edi
+00000BF9  53                push ebx
+00000BFA  2A4D41            sub cl,[ebp+0x41]
+00000BFD  58                pop eax
+00000BFE  5F                pop edi
+00000BFF  43                inc ebx
+00000C00  4F                dec edi
+00000C01  4C                dec esp
+00000C02  53                push ebx
+00000C03  2A32              sub dh,[edx]
+00000C05  297B0A            sub [ebx+0xa],edi
+00000C08  0909              or [ecx],ecx
+00000C0A  7265              jc 0xc71
+00000C0C  7475              jz 0xc83
+00000C0E  726E              jc 0xc7e
+00000C10  206375            and [ebx+0x75],ah
+00000C13  7273              jc 0xc88
+00000C15  6F                outsd
+00000C16  725F              jc 0xc77
+00000C18  6F                outsd
+00000C19  66667365          o16 jnc 0xc82
+00000C1D  743B              jz 0xc5a
+00000C1F  0A09              or cl,[ecx]
+00000C21  7D0A              jnl 0xc2d
+00000C23  0A09              or cl,[ecx]
+00000C25  2F                das
+00000C26  2F                das
+00000C27  6D                insd
+00000C28  6F                outsd
+00000C29  7665              jna 0xc90
+00000C2B  20726F            and [edx+0x6f],dh
+00000C2E  7773              ja 0xca3
+00000C30  206261            and [edx+0x61],ah
+00000C33  636B20            arpl [ebx+0x20],bp
+00000C36  310A              xor [edx],ecx
+00000C38  09696E            or [ecx+0x6e],ebp
+00000C3B  7420              jz 0xc5d
+00000C3D  693B0A09666F      imul edi,[ebx],dword 0x6f66090a
+00000C43  7220              jc 0xc65
+00000C45  28693D            sub [ecx+0x3d],ch
+00000C48  313B              xor [ebx],edi
+00000C4A  20693C            and [ecx+0x3c],ch
+00000C4D  4D                dec ebp
+00000C4E  41                inc ecx
+00000C4F  58                pop eax
+00000C50  5F                pop edi
+00000C51  52                push edx
+00000C52  4F                dec edi
+00000C53  57                push edi
+00000C54  53                push ebx
+00000C55  3B20              cmp esp,[eax]
+00000C57  692B2B297B0A      imul ebp,[ebx],dword 0xa7b292b
+00000C5D  0909              or [ecx],ecx
+00000C5F  6D                insd
+00000C60  656D              gs insd
+00000C62  6F                outsd
+00000C63  7279              jc 0xcde
+00000C65  5F                pop edi
+00000C66  636F70            arpl [edi+0x70],bp
+00000C69  7928              jns 0xc93
+00000C6B  0A09              or cl,[ecx]
+00000C6D  096765            or [edi+0x65],esp
+00000C70  745F              jz 0xcd1
+00000C72  7363              jnc 0xcd7
+00000C74  7265              jc 0xcdb
+00000C76  656E              gs outsb
+00000C78  5F                pop edi
+00000C79  6F                outsd
+00000C7A  66667365          o16 jnc 0xce3
+00000C7E  7428              jz 0xca8
+00000C80  302C69            xor [ecx+ebp*2],ch
+00000C83  292B              sub [ebx],ebp
+00000C85  56                push esi
+00000C86  49                dec ecx
+00000C87  44                inc esp
+00000C88  45                inc ebp
+00000C89  4F                dec edi
+00000C8A  5F                pop edi
+00000C8B  41                inc ecx
+00000C8C  44                inc esp
+00000C8D  44                inc esp
+00000C8E  52                push edx
+00000C8F  45                inc ebp
+00000C90  53                push ebx
+00000C91  53                push ebx
+00000C92  2C0A              sub al,0xa
+00000C94  0909              or [ecx],ecx
+00000C96  6765745F          gs jz 0xcf9
+00000C9A  7363              jnc 0xcff
+00000C9C  7265              jc 0xd03
+00000C9E  656E              gs outsb
+00000CA0  5F                pop edi
+00000CA1  6F                outsd
+00000CA2  66667365          o16 jnc 0xd0b
+00000CA6  7428              jz 0xcd0
+00000CA8  302C69            xor [ecx+ebp*2],ch
+00000CAB  2D31292B56        sub eax,0x562b2931
+00000CB0  49                dec ecx
+00000CB1  44                inc esp
+00000CB2  45                inc ebp
+00000CB3  4F                dec edi
+00000CB4  5F                pop edi
+00000CB5  41                inc ecx
+00000CB6  44                inc esp
+00000CB7  44                inc esp
+00000CB8  52                push edx
+00000CB9  45                inc ebp
+00000CBA  53                push ebx
+00000CBB  53                push ebx
+00000CBC  2C0A              sub al,0xa
+00000CBE  0909              or [ecx],ecx
+00000CC0  4D                dec ebp
+00000CC1  41                inc ecx
+00000CC2  58                pop eax
+00000CC3  5F                pop edi
+00000CC4  43                inc ebx
+00000CC5  4F                dec edi
+00000CC6  4C                dec esp
+00000CC7  53                push ebx
+00000CC8  2A32              sub dh,[edx]
+00000CCA  0A09              or cl,[ecx]
+00000CCC  0929              or [ecx],ebp
+00000CCE  3B0A              cmp ecx,[edx]
+00000CD0  097D0A            or [ebp+0xa],edi
+00000CD3  0A09              or cl,[ecx]
+00000CD5  2F                das
+00000CD6  2F                das
+00000CD7  626C616E          bound ebp,[ecx+0x6e]
+00000CDB  6B206C            imul esp,[eax],byte +0x6c
+00000CDE  61                popad
+00000CDF  7374              jnc 0xd55
+00000CE1  206C696E          and [ecx+ebp*2+0x6e],ch
+00000CE5  650A09            or cl,[gs:ecx]
+00000CE8  636861            arpl [eax+0x61],bp
+00000CEB  722A              jc 0xd17
+00000CED  206C6173          and [ecx+0x73],ch
+00000CF1  745F              jz 0xd52
+00000CF3  6C                insb
+00000CF4  696E653D676574    imul ebp,[esi+0x65],dword 0x7465673d
+00000CFB  5F                pop edi
+00000CFC  7363              jnc 0xd61
+00000CFE  7265              jc 0xd65
+00000D00  656E              gs outsb
+00000D02  5F                pop edi
+00000D03  6F                outsd
+00000D04  66667365          o16 jnc 0xd6d
+00000D08  7428              jz 0xd32
+00000D0A  302C4D41585F52    xor [ecx*2+0x525f5841],ch
+00000D11  4F                dec edi
+00000D12  57                push edi
+00000D13  53                push ebx
+00000D14  2D3129202B        sub eax,0x2b202931
+00000D19  205649            and [esi+0x49],dl
+00000D1C  44                inc esp
+00000D1D  45                inc ebp
+00000D1E  4F                dec edi
+00000D1F  5F                pop edi
+00000D20  41                inc ecx
+00000D21  44                inc esp
+00000D22  44                inc esp
+00000D23  52                push edx
+00000D24  45                inc ebp
+00000D25  53                push ebx
+00000D26  53                push ebx
+00000D27  3B0A              cmp ecx,[edx]
+00000D29  09666F            or [esi+0x6f],esp
+00000D2C  7228              jc 0xd56
+00000D2E  693D303B20693C4D  imul edi,[dword 0x69203b30],dword 0x58414d3c
+         -4158
+00000D38  5F                pop edi
+00000D39  43                inc ebx
+00000D3A  4F                dec edi
+00000D3B  4C                dec esp
+00000D3C  53                push ebx
+00000D3D  2A32              sub dh,[edx]
+00000D3F  3B20              cmp esp,[eax]
+00000D41  692B2B297B0A      imul ebp,[ebx],dword 0xa7b292b
+00000D47  0909              or [ecx],ecx
+00000D49  6C                insb
+00000D4A  61                popad
+00000D4B  7374              jnc 0xdc1
+00000D4D  5F                pop edi
+00000D4E  6C                insb
+00000D4F  696E655B695D3D    imul ebp,[esi+0x65],dword 0x3d5d695b
+00000D56  303B              xor [ebx],bh
+00000D58  0A09              or cl,[ecx]
+00000D5A  7D0A              jnl 0xd66
+00000D5C  0A09              or cl,[ecx]
+00000D5E  2F                das
+00000D5F  2F                das
+00000D60  6D                insd
+00000D61  6F                outsd
+00000D62  7665              jna 0xdc9
+00000D64  206F66            and [edi+0x66],ch
+00000D67  667365            o16 jnc 0xdcf
+00000D6A  7420              jz 0xd8c
+00000D6C  746F              jz 0xddd
+00000D6E  206672            and [esi+0x72],ah
+00000D71  6F                outsd
+00000D72  6E                outsb
+00000D73  7420              jz 0xd95
+00000D75  6F                outsd
+00000D76  66206C6173        o16 and [ecx+0x73],ch
+00000D7B  7420              jz 0xd9d
+00000D7D  726F              jc 0xdee
+00000D7F  770A              ja 0xd8b
+00000D81  096375            or [ebx+0x75],esp
+00000D84  7273              jc 0xdf9
+00000D86  6F                outsd
+00000D87  725F              jc 0xde8
+00000D89  6F                outsd
+00000D8A  66667365          o16 jnc 0xdf3
+00000D8E  7420              jz 0xdb0
+00000D90  2D3D20322A        sub eax,0x2a32203d
+00000D95  4D                dec ebp
+00000D96  41                inc ecx
+00000D97  58                pop eax
+00000D98  5F                pop edi
+00000D99  43                inc ebx
+00000D9A  4F                dec edi
+00000D9B  4C                dec esp
+00000D9C  53                push ebx
+00000D9D  3B0A              cmp ecx,[edx]
+00000D9F  0A09              or cl,[ecx]
+00000DA1  2F                das
+00000DA2  2F                das
+00000DA3  52                push edx
+00000DA4  657475            gs jz 0xe1c
+00000DA7  726E              jc 0xe17
+00000DA9  207570            and [ebp+0x70],dh
+00000DAC  6461              fs popad
+00000DAE  7465              jz 0xe15
+00000DB0  64206375          and [fs:ebx+0x75],ah
+00000DB4  7273              jc 0xe29
+00000DB6  6F                outsd
+00000DB7  7220              jc 0xdd9
+00000DB9  706F              jo 0xe2a
+00000DBB  7369              jnc 0xe26
+00000DBD  7469              jz 0xe28
+00000DBF  6F                outsd
+00000DC0  6E                outsb
+00000DC1  0A09              or cl,[ecx]
+00000DC3  7265              jc 0xe2a
+00000DC5  7475              jz 0xe3c
+00000DC7  726E              jc 0xe37
+00000DC9  206375            and [ebx+0x75],ah
+00000DCC  7273              jc 0xe41
+00000DCE  6F                outsd
+00000DCF  725F              jc 0xe30
+00000DD1  6F                outsd
+00000DD2  66667365          o16 jnc 0xe3b
+00000DD6  743B              jz 0xe13
+00000DD8  0A7D0A            or bh,[ebp+0xa]
+00000DDB  0A                db 0x0a

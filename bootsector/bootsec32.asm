@@ -7,12 +7,12 @@ KERNEL_OFFSET equ 0x1000
 	
 	
 	;clear screen
-	call clearsn
+;	call clearsn
 
 	mov bx, MSG_REAL_MODE
 	call print_test
 	
-	call print_newln
+;	call print_newln
 	
 	call load_kernel
 	
@@ -35,7 +35,7 @@ load_kernel:
 	;call clearsn
 	mov bx, MSG_LOAD_KERNEL
 	call print_test
-	call print_newln
+;	call print_newln
 	
 	mov bx, KERNEL_OFFSET	;set param for disk load
 	mov dh, 15		;load 15 sectors (exclude boot sec)
@@ -57,41 +57,41 @@ BEGIN_PM:
 	
 	jmp $
 
-clearsn:
+;clearsn:
 	;set cursor far below to clear screen
-	push ax
-	mov ah,2
-	mov bh,0
-	mov dh,40
-	mov dl,0
-	int 0x10	
-	pop ax
+;	push ax
+;	mov ah,2
+;	mov bh,0
+;	mov dh,40
+;	mov dl,0
+;	int 0x10	
+;	pop ax
 	
 	
 	;clear screen
-	push bp
-	mov bp,sp    ;move top of stack pointer to base pointer
-	pusha
+;	push bp
+;	mov bp,sp    ;move top of stack pointer to base pointer
+;	pusha
 
-	mov ah, 0x07 ;bios scroll down window
-	mov al, 0x00 ;clear window
-	mov bh, 0x07 ;white on black
-	mov cx, 0x00 ;top left of screen
-	mov dh, 0x18 ;24 rows
-	mov dl, 0x4f ;79 columns
-	int 0x10     ;vid interrupt
+;	mov ah, 0x07 ;bios scroll down window
+;	mov al, 0x00 ;clear window
+;	mov bh, 0x07 ;white on black
+;	mov cx, 0x00 ;top left of screen
+;	mov dh, 0x18 ;24 rows
+;	mov dl, 0x4f ;79 columns
+;	int 0x10     ;vid interrupt
 
-	popa
-	mov sp,bp
-	pop bp
+;	popa
+;	mov sp,bp
+;	pop bp
 
-	push ax
-	mov ah,2 ;move cursor call
-	mov bh,0 ;page 0
-	mov dx,0 ;cursor at 0x0
-	int 0x10
-	pop ax
-	ret
+;	push ax
+;	mov ah,2 ;move cursor call
+;	mov bh,0 ;page 0
+;	mov dx,0 ;cursor at 0x0
+;	int 0x10
+;	pop ax
+;	ret
 
 ;Global var
 BOOT_DRIVE	db 	0

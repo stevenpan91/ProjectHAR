@@ -1,0 +1,32 @@
+Works				Doesn't work
+-------------------------------------------
+push ebp			push ebp
+dec eax				""
+mov ebp, esp			""
+dec eax				""
+mov dword [ebp-0x8],0xb8000	""
+mov byte [ebp-0x9],0x48		""
+mov byte [ebp-0xa],0xf		""
+mov dword [ebp-0x10],0x1	""
+--				mov eax,[ebp-0x10]
+dec eax				""
+--				arpl ax,dx
+--				dec eax
+mov eax, [ebp-0x8]		""
+dec eax				""
+lea edx, [eax+0x1]		add edx,eax
+movzx eax, byte [ebp-0x9]	""
+mov [edx],al			""
+--				mov eax, [ebp-0x10]
+dec eax				""
+--				cwde
+--				dec eax
+--				lea edx,[eax+0x1]
+--				dec eax
+mov eax,[ebp-0x8]		""
+dec eax				""
+lea edx, [eax+0x2]		add edx,eax
+movzx eax,byte [ebp-0xa]	""
+mov [edx], al			""
+pop ebp				""
+ret				""

@@ -1,7 +1,11 @@
-int get_screen_offset(int col, int row){
+#include "screen.h"
 
-	int returnval;
-	returnval=(row*MAX_COLS+col)*2;
+unsigned int get_screen_offset(int col, int row){
+
+	//should investigate but it seems as though it's off by 1
+	unsigned int returnval;
+	//added one
+	returnval=(row*MAX_COLS+col)*2+1;
 
 }
 
@@ -27,7 +31,7 @@ void set_cursor(int offset){
 	//this may be incomplete
 	offset /= 2; //cell to char offset
 	port_byte_out(REG_SCREEN_CTRL,14);
-	port_byte_out(REG_SCREEN_DATA, (unsigned char) (offet >> 8));
+	port_byte_out(REG_SCREEN_DATA, (unsigned char) (offset >> 8));
 	port_byte_out(REG_SCREEN_CTRL,15);
 
 }
@@ -35,17 +39,20 @@ void set_cursor(int offset){
 
 
 //print char on screen at col,row or cursor
-void print_char(char character, int col, int row, char attribute_byte){
+void print_char(unsigned char character, int col, int row, unsigned char attribute_byte){
 	//create a byte (char) pointer to start of vid mem
-	unsigned char *vidmem = (unsigned char *) VIDEO_ADDRESS;
+	//unsigned char *vidmem = (unsigned char *) VIDEO_ADDRESS;
+	unsigned char *vidmem = (unsigned char *) 0xb8000;
+	*vidmem=character;
 
+/*
 	//if attribute byte is zero, assume default style
 	if (!attribute_byte) {
 		attribute_byte=WHITE_ON_BLACK;
 	}
 
 	//get vid mem offset for screen location
-	int offset;
+	unsigned int offset;
 
 	//if col and row are non-negative use them for offset
 	if (col >= 0 && row >= 0){
@@ -62,11 +69,15 @@ void print_char(char character, int col, int row, char attribute_byte){
 		int rows = offset / (2*MAX_COLS);
 		offset = get_screen_offset(79,rows);
 	}
+
 	//Otherwise, write the character and its attribute tpe to
 	//vid memory at calculated offset
 	else {
-		vidmem[offset] = character;
-		vidmem[offset+1] = attribute_byte;	
+		//*vidmem=character;
+		vidmem[offset]=character;
+		vidmem[offset+1]=attribute_byte;
+		//vidmem[offset] = character;
+		//vidmem[offset+1] = attribute_byte;	
 	}
 
 	//Update offset to next char cell, 2 bytes ahead of current cell
@@ -77,6 +88,7 @@ void print_char(char character, int col, int row, char attribute_byte){
 	
 	//Update cursor position on screen device
 	set_cursor(offset);
+*/
 }
 
 void print_at(char* message, int col, int row){
@@ -100,7 +112,7 @@ void clear_screen() {
 	int col = 0;
 
 	//write blank chars through vid mem
-	for (row=0, row<MAX_ROWS; row++) {
+	for (row=0; row<MAX_ROWS; row++) {
 		for (col=0; col<MAX_COLS; col++){
 			print_char(' ', col,row, WHITE_ON_BLACK);
 		}
