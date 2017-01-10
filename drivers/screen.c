@@ -104,19 +104,28 @@ int slen(char* thestr)
 }
 
 void print_at(char* message, int col, int row){
+	unsigned char* testmem = (unsigned char*) 0xb8000;
 	//Update cursor if col and row not negative
 	if(col>=0 && row>=0) {
 		set_cursor(get_screen_offset(col,row));
 	}
 	//Loop through each char of message and print it
 	//int should be 0...this is off by 1
-	unsigned int i=1;
-	int tempcol=col;	
+	unsigned int i=1;	
 	while (i<slen(message))
 	{
-	   print_char(message[i],tempcol,row,WHITE_ON_BLACK);
+	   //set first char at designated screen address if
+	   //the address is over 0 and the firt char
+	   if(i==1 && col>0 && row>0){	
+	   print_char(message[i],col,row,WHITE_ON_BLACK);
+	 
+	   }
+	   //otherwise just print at current cursor pos
+	   else{
+	   *testmem = col+0x31;
+	   print_char(message[i],-1,-1,WHITE_ON_BLACK);
+	   }
 	   i++;
-	   tempcol++;
 	}
 }
 
