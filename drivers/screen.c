@@ -4,12 +4,12 @@ unsigned int get_screen_offset(int col, int row){
 
 	//should investigate but it seems as though it's off by 1
 	unsigned int returnval;
-	//added one
+	//added one. Unsure why because should be 0 offset
 	returnval=(row*MAX_COLS+col)*2+1;
 
 }
 
-int get_cursor(){
+unsigned int get_cursor(){
 	//device uses control reg as an index to select
 	//internal registers
 	//reg 14: high byte of cursor offset
@@ -23,29 +23,31 @@ int get_cursor(){
 	offset += port_byte_in(REG_SCREEN_DATA);
 
 	//mult by 2 to convert to char cell offset
-	return offset*2;
+	//As everything seems to be off by one...added one
+	return offset*2+1;
 
 }
 
 void set_cursor(int offset){
 	//this may be incomplete
-	offset /= 2; //cell to char offset
+	offset = (offset/2); //cell to char offset
 	port_byte_out(REG_SCREEN_CTRL,14);
 	port_byte_out(REG_SCREEN_DATA, (unsigned char) (offset >> 8));
 	port_byte_out(REG_SCREEN_CTRL,15);
+	port_byte_out(REG_SCREEN_DATA,offset);
 
 }
 
 
 
 //print char on screen at col,row or cursor
-void print_char(unsigned char character, int col, int row, unsigned char attribute_byte){
+//This is hacked to work and is unstable. there cannot be 2 char arguments
+//in this function and I have no idea why
+void print_char(char character, int col, int row, int attribute_byte){
 	//create a byte (char) pointer to start of vid mem
-	//unsigned char *vidmem = (unsigned char *) VIDEO_ADDRESS;
-	unsigned char *vidmem = (unsigned char *) 0xb8000;
-	*vidmem=character;
+	unsigned char *vidmem = (unsigned char *) VIDEO_ADDRESS;
 
-/*
+
 	//if attribute byte is zero, assume default style
 	if (!attribute_byte) {
 		attribute_byte=WHITE_ON_BLACK;
@@ -76,19 +78,29 @@ void print_char(unsigned char character, int col, int row, unsigned char attribu
 		//*vidmem=character;
 		vidmem[offset]=character;
 		vidmem[offset+1]=attribute_byte;
-		//vidmem[offset] = character;
-		//vidmem[offset+1] = attribute_byte;	
 	}
 
 	//Update offset to next char cell, 2 bytes ahead of current cell
 	offset +=2;
 
 	//make scrolling adjustment
-	offset = handle_scrolling(offset);
+	//offset = handle_scrolling(offset);
 	
 	//Update cursor position on screen device
 	set_cursor(offset);
-*/
+
+}
+
+int slen(char* thestr)
+{	
+	int count=0;
+	while(*thestr != '\0')
+	{
+		count++;
+		thestr++;
+	}
+
+	return count;
 }
 
 void print_at(char* message, int col, int row){
@@ -97,9 +109,14 @@ void print_at(char* message, int col, int row){
 		set_cursor(get_screen_offset(col,row));
 	}
 	//Loop through each char of message and print it
-	int i=0;
-	while(message[i] != 0){
-		print_char(message[i++], col, row, WHITE_ON_BLACK);
+	//int should be 0...this is off by 1
+	unsigned int i=1;
+	int tempcol=col;	
+	while (i<slen(message))
+	{
+	   print_char(message[i],tempcol,row,WHITE_ON_BLACK);
+	   i++;
+	   tempcol++;
 	}
 }
 

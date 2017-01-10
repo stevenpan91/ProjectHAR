@@ -1,4 +1,4 @@
 [bits 32]
-[extern main] ;declare reference to external symbol main
-call main	;invoke main() in C kernel
+[extern kernel_start] ;declare reference to external symbol main
+call kernel_start	;invoke main() in C kernel
 jmp $

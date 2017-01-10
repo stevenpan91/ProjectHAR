@@ -17,7 +17,7 @@ bootsector/bootsec32.bin: bootsector/bootsec32.asm
 
 kernel/kernel.bin: kernel/kernel_entry.o ${OBJ}
 #kernel.bin: kernel/kernel_entry.o kernel/kernel.o
-	ld -o $@ -Ttext 0x1000 $^ --oformat binary --entry main
+	ld -o $@ -Ttext 0x1000 $^ --oformat binary --entry kernel_start
 
 #generic rule for compiling C to an object file
 %.o: %.c ${HEADERS}
