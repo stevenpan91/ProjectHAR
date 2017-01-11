@@ -47,6 +47,15 @@ load_kernel:
 
 ;arrive here after switching to and initialising protected mode
 BEGIN_PM:
+	;move cursor
+	
+	push cx	      ;Going to make use of cx for storing offset
+	mov cx,321    ;offset val col:0 row:2
+	out 0x3D4, 14 ;port byte 14 to port 0x3D4 (REG SCREEN CTRL)
+	shr cx, 8     ;shift cx right 8
+	out 0x3D5, cx   ;then store to port 0x3D5 which is REG SCREEN DATA
+	out 0x3D4, 15 ;port byte 15 to port 0x3D4
+	out 0x3D5, cx    ;offset value to port 0x3D5
 	
 	mov ebx, MSG_PROT_MODE
 	call print_string_pm

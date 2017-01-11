@@ -28,8 +28,7 @@ unsigned int get_cursor(){
 
 }
 
-void set_cursor(int offset){
-	//this may be incomplete
+void set_cursor(unsigned int offset){
 	offset = (offset/2); //cell to char offset
 	port_byte_out(REG_SCREEN_CTRL,14);
 	port_byte_out(REG_SCREEN_DATA, (unsigned char) (offset >> 8));
@@ -84,27 +83,36 @@ void print_char(char character, int col, int row, int attribute_byte){
 	offset +=2;
 
 	//make scrolling adjustment
-	//offset = handle_scrolling(offset);
+	offset = handle_scrolling(offset);
 	
 	//Update cursor position on screen device
 	set_cursor(offset);
 
 }
 
-int slen(char* thestr)
+unsigned int slen(unsigned char* thestr)
 {	
+	//unsigned char* vidmem = (unsigned char*) 0xb8000;
+	//*vidmem=thestr[1];
+	
+	//Passed strings have null at element 1, so add 1 
+	//Off by 1 problem
+	thestr+=1;
+	
 	int count=0;
 	while(*thestr != '\0')
 	{
 		count++;
 		thestr++;
 	}
-
-	return count;
+	
+	//again, off by one
+	return count+1;
 }
 
-void print_at(char* message, int col, int row){
-	unsigned char* testmem = (unsigned char*) 0xb8000;
+void print_at(unsigned char* message, int col, int row){
+	//unsigned char* vidmem = (unsigned char*) 0xb8000;
+
 	//Update cursor if col and row not negative
 	if(col>=0 && row>=0) {
 		set_cursor(get_screen_offset(col,row));
@@ -122,14 +130,15 @@ void print_at(char* message, int col, int row){
 	   }
 	   //otherwise just print at current cursor pos
 	   else{
-	   *testmem = col+0x31;
 	   print_char(message[i],-1,-1,WHITE_ON_BLACK);
 	   }
 	   i++;
 	}
 }
 
-void print(char* message) {
+void print(unsigned char* message) {
+	//pointer is off by one...quite a serious problem
+	message++;
 	print_at(message,-1,-1);
 }
 

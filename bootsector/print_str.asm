@@ -30,8 +30,6 @@ print_hex:
 	mov si,dx	;back up dx
 	jmp iterhex ;perform replacement
 	
-retprhex:
-	call print_test ;print string
 
 iterhex:
 	mov di,3	;amount of cycles
