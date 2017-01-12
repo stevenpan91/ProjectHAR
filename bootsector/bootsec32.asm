@@ -26,7 +26,6 @@ KERNEL_OFFSET equ 0x1000
 %include "bootsector/disk_load.asm"
 %include "bootsector/gdt.asm"
 %include "bootsector/switchpm.asm"
-;%include "screen_func.asm"
 
 [bits 16]
 
@@ -47,18 +46,9 @@ load_kernel:
 
 ;arrive here after switching to and initialising protected mode
 BEGIN_PM:
-	;move cursor
-	
-	push cx	      ;Going to make use of cx for storing offset
-	mov cx,321    ;offset val col:0 row:2
-	out 0x3D4, 14 ;port byte 14 to port 0x3D4 (REG SCREEN CTRL)
-	shr cx, 8     ;shift cx right 8
-	out 0x3D5, cx   ;then store to port 0x3D5 which is REG SCREEN DATA
-	out 0x3D4, 15 ;port byte 15 to port 0x3D4
-	out 0x3D5, cx    ;offset value to port 0x3D5
-	
-	mov ebx, MSG_PROT_MODE
-	call print_string_pm
+    
+	;mov ebx, MSG_PROT_MODE
+	;call print_string_pm
 
 
 	call KERNEL_OFFSET
@@ -96,15 +86,16 @@ clearsn:
 	push ax
 	mov ah,2 ;move cursor call
 	mov bh,0 ;page 0
-	mov dx,0 ;cursor at 0x0
+	mov dl,0 ;cursor at 0x0
+    mov dh,0
 	int 0x10
 	pop ax
 	ret
 
 ;Global var
 BOOT_DRIVE	db 	0
-MSG_REAL_MODE 	db	"Init 16-bit Real Mode", 0
-MSG_PROT_MODE 	db	"Init 32-bit Protected Mode",0
+MSG_REAL_MODE 	db	"Initialize 16-bit Real Mode.", 0
+MSG_PROT_MODE 	db	"Initalize 32-bit Protected Mode.",0
 MSG_LOAD_KERNEL	db	"Loading kernel to memory.",0
 DbgPrint	db	"Reached here.",0
 
