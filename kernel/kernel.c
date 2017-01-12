@@ -11,5 +11,8 @@ void kernel_start() {
     /*Below happens if there are more than two char arguments in print_char method:
 	char (first arg): read as 0x7D no matter what
 	attr (fourth arg): off by +0x01)*/
-	
+
+	int i;
+	for(i=0; i<160; i++){
+		print("Testscrolling");}	
 }

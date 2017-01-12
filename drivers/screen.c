@@ -159,6 +159,7 @@ void clear_screen() {
 
 int handle_scrolling(int cursor_offset){
 	//if cursor within screen return unmodified
+	//The part in the if statement is fine, not affected by off by 1
 	if(cursor_offset<MAX_ROWS*MAX_COLS*2){
 		return cursor_offset;
 	}
